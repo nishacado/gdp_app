@@ -1,4 +1,5 @@
 import streamlit as st
+import pathlib
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -108,7 +109,7 @@ user_input = np.array([att_popl, att_area, att_dens, att_cost, att_migr,
 
 #import dataset
 def get_dataset():
-    data = pd.read_csv('./countries-of-the-world.csv')
+    data = pd.read_csv(f"{pathlib.Path().resolve()}\App\countries-of-the-world.csv")
     return data
 
 if st.button('Estimate GDP'):
